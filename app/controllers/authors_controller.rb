@@ -2,6 +2,7 @@ class AuthorsController < ApplicationController
   def new
   end
 
-  def index
+  def create
+      render plain: params[:article].inspect
   end
 end
