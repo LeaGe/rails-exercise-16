@@ -3,6 +3,10 @@ class AuthorsController < ApplicationController
   end
 
   def create
-      render plain: params[:article].inspect
+      authors.create(params[:first_name])
+      authors.create(params[:last_name])
+      authors.create(params[:homepage])
   end
+
+
 end

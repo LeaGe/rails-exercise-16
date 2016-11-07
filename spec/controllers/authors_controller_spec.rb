@@ -9,4 +9,6 @@ RSpec.describe AuthorsController, type: :controller do
     end
   end
 
+  describe "An Author"
+
 end
