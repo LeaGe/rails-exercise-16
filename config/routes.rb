@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'authors/new'
+  #get 'authors/new'
+  resources :authors, only: [:new]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

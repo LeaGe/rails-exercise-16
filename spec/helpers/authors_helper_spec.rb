@@ -1,12 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe AuthorsController, type: :controller do
-
-  describe "GET #new" do
-    it "returns http success" do
-      get :new
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-end
+# Specs in this file have access to a helper object that includes
+# the AuthorsHelper. For example:
+#
+# describe AuthorsHelper do
+#   describe "string concat" do
+#     it "concats two strings with spaces" do
+#       expect(helper.concat_strings("this","that")).to eq("this that")
+#     end
+#   end
+# end
+#RSpec.describe AuthorsHelper, type: :helper do
+ # pending "add some examples to (or delete) #{__FILE__}"
+#end
