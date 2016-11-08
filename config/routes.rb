@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'new_author' => 'authors#new'
+  #get 'edit_author' => 'authors#edit'
   resources :authors
 
 
