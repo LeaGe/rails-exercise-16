@@ -21,5 +21,12 @@ describe "New Author page", :type => :feature do
     expect(Author.find_by(first_name: "Alan", last_name: "Turing"))
   end
 
+  it 'should show validation errors' do
+    visit new_author_path
+    fill_in "author_first_name", with: "Alan"
+    fill_in "author_homepage", with: "'http://wikipedia.org/Alan_Turing"
+    click_button "Save Author"
+    expect(page).to have_text("last name can't be blank")
+  end
 
 end
