@@ -3,10 +3,14 @@ class AuthorsController < ApplicationController
   end
 
   def create
-    @authors = Authors.new(params[:autors])
+    @author = Author.new(params.require(:author).permit(:first_name, :last_name, :hompage))
 
-    @authors.save
+    @author.save
+    redirect_to @author
   end
 
+  def show
+    @author = Author.find(params[:id])
+  end
 
 end
