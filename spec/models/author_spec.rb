@@ -7,4 +7,9 @@ RSpec.describe Author, type: :model do
     end
   end
 
+  describe "Author" do
+    it "should not validate without last name" do
+      expect(build(:author, id:nil, last_name:nil, homepage:"http://example.com")).to_not be_valid
+    end
+  end
 end
