@@ -9,6 +9,6 @@ describe "Author index page", :type => :feature do
   it "should list name and hompage of all authors" do
     create(:author)
     visit authors_path
-    expect(page).to have_text("alan turing")
+    expect(page).to have_text("Alan Turing")
   end
 end
