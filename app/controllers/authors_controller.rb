@@ -3,9 +3,9 @@ class AuthorsController < ApplicationController
   end
 
   def create
-      authors.create(params[:first_name])
-      authors.create(params[:last_name])
-      authors.create(params[:homepage])
+    @authors = Authors.new(params[:autors])
+
+    @authors.save
   end
 
 
