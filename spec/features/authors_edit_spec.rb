@@ -11,7 +11,7 @@ describe "Edit Author page", :type => :feature do
     author = create(:author)
     visit edit_author_path(author)
     fill_in "author_last_name", with: "Mathison"
-    click_button "Submit"
+    click_button "Save Author"
     expect(Author.find_by(first_name: "Alan").last_name). to eql("Mathison")
   end
 

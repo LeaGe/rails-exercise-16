@@ -1,3 +1,37 @@
 <h1>Edit author</h1>
 
-<%= render 'form' %>
+
+<%= form_for :author, url: author_path(@author), method: :patch do |f| %>
+
+    <% if @author.errors.any? %>
+        <dif id="error_explanation">
+          <h2>
+            <%= pluralize(@author.errors.count, "error") %> prohibited this author from being saved:
+          </h2>
+          <ul>
+            <% @author.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </dif>
+    <% end %>
+
+    <p>
+      <%= f.label :first_name %><br>
+      <%= f.text_field :first_name %>
+    </p>
+
+    <p>
+      <%= f.label :last_name %><br>
+      <%= f.text_field :last_name %>
+    </p>
+
+    <p>
+      <%= f.label :homepage %><br>
+      <%= f.text_field :homepage%>
+    </p>
+
+    <p>
+      <%= f.submit "Save Author"%>
+    </p>
+<% end %>
