@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  #get 'papers/new'
+  get 'new_paper' => 'papers#new'
+
   get 'new_author' => 'authors#new'
   #get 'edit_author' => 'authors#edit'
   resources :authors
