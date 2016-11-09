@@ -29,9 +29,16 @@ describe "Author index page", :type => :feature do
     expect(page).to have_css("a", text:"Edit")
   end
 
-  it "should link to edit author page" do
+  it "should link to destroy an author" do
     create(:author)
     visit authors_path
     expect(page).to have_css("a", text:"Destroy")
+  end
+
+  it "should link to delete an author" do
+    create(:author)
+    visit authors_path
+    click_link "Destroy"
+    expect(Author.find_by(first_name: "Alan")).to be_nil
   end
 end
