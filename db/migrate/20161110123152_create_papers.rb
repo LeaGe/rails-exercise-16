@@ -1,9 +1,9 @@
 class CreatePapers < ActiveRecord::Migration
   def change
     create_table :papers do |t|
-      t.string :Title
-      t.string :Venue
-      t.string :Year
+      t.string :title
+      t.string :venue
+      t.string :year
 
       t.timestamps null: false
     end

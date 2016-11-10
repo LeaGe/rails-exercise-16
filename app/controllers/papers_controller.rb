@@ -20,6 +20,6 @@ class PapersController < ApplicationController
 
   private
     def paper_params
-      params.require(:paper).permit(:Title, :Venue, :Year)
+      params.require(:paper).permit(:title, :venue, :year)
     end
 end
