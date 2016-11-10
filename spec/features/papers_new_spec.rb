@@ -22,8 +22,8 @@ describe "New paper page", :type => :feature do
     visit new_paper_path
     fill_in "paper_title", with: "COMPUTING MACHINERY AND INTELLIGENCE"
     fill_in "paper_venue", with: "Mind 49: 433-460"
-    fill_in "paper_year", with: "1950"
+    fill_in "paper_year", with: 1950
     click_button "Save Paper"
-    expect(Paper.find_by(Year: "1950"))
+    expect(Paper.find_by(Year: 1950))
   end
 end
