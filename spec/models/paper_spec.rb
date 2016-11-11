@@ -17,7 +17,7 @@ RSpec.describe Paper, type: :model do
     end
 
     it "should have and belog to many authors" do
-      paper = create(:paper)
+      paper = Paper.new
       expect(paper.authors).to be_empty
     end
 
