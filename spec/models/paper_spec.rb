@@ -16,6 +16,11 @@ RSpec.describe Paper, type: :model do
       expect(build(:paper, title: "computing machinery and intelligence", venue: "mind 49: 433-460", year: 'nineteen-fifty')).to_not be_valid
     end
 
+    it "should have and belog to many authors" do
+      paper = create(:paper)
+      expect(paper.authors).to be_empty
+    end
+
   end
 
 end

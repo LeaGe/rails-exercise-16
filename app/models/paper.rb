@@ -3,4 +3,6 @@ class Paper < ActiveRecord::Base
   validates :venue, presence: true
   validates :year, presence: true
   validates :year, numericality: { only_integer: true }
+
+  has_many :authors
 end
