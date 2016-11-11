@@ -26,4 +26,12 @@ describe "New paper page", :type => :feature do
     click_button "Save Paper"
     expect(Paper.find_by(Year: 1950))
   end
+
+  it 'should show validation errors' do
+    visit new_paper_path
+    fill_in "paper_venue", with: "A"
+    fill_in "paper_year", with: 2
+    click_button "Save Paper"
+    expect(page).to have_text("Title can't be blank")
+  end
 end
