@@ -12,4 +12,9 @@ RSpec.describe Author, type: :model do
       expect(build(:author, id:nil, last_name:nil, homepage:"http://example.com")).to_not be_valid
     end
   end
+
+  it "should have and belog to many papers" do
+    author = Author.new
+    expect(author.papers).to be_empty
+  end
 end
