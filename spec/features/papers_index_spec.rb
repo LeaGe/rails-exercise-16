@@ -12,4 +12,10 @@ describe "Paper index page", :type => :feature do
     visit papers_path
     expect(page).to have_css("a", "Add paper")
   end
+
+  it "should link to paper page" do
+    create(:paper)
+    visit papers_path
+    expect(page).to have_css("a", "Show")
+  end
 end

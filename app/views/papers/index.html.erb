@@ -11,7 +11,8 @@
       <tr>
         <td><%= paper.title %></td>
         <td><%= paper.venue %></td>
-        <td><%= paper.year %></td
+        <td><%= paper.year %></td>
+        <td><%= link_to "Show", paper_path(paper) %></td>
       </tr>
   <% end %>
 </table>
