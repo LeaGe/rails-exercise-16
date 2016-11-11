@@ -5,9 +5,9 @@ describe "Edit Paper page", :type => :feature do
   it "should save changes" do
     paper = create(:paper)
     visit edit_paper_path(paper)
-    #fill_in "author_last_name", with: "Mathison"
-    #click_button "Save Author"
-    #expect(Author.find_by(first_name: "Alan").last_name). to eql("Mathison")
+    fill_in "paper_venue", with: "Mind 49"
+    click_button "Save Paper"
+    expect(Paper.find_by(year: 1950).venue). to eql("Mind 49")
   end
 
 end
