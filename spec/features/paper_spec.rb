@@ -7,4 +7,10 @@ describe "Paper page", :type => :feature do
     visit paper_path(paper)
     expect(page).to have_text("COMPUTING MACHINERY AND INTELLIGENCE")
   end
+
+  it "should list the authors" do
+    paper = create(:paper)
+    visit paper_path(paper)
+    expect(page).to have_text("Alan Turing")
+  end
 end
