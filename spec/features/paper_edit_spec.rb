@@ -23,4 +23,14 @@ describe "Edit Paper page", :type => :feature do
     expect(page).to have_select("Author 1", selected: "Alan Turing")
   end
 
+  it "should save changes to the author list" do
+    create(:author)
+    author2 = create(:author, first_name: "Peter", last_name: "Plagiarist")
+    paper = create(:paper)
+    visit edit_paper_path(paper)
+    select "Peter Plagiarist", :from => "Author 1"
+    click_button "Save Paper"
+    expect(Paper.find_by(year: 1950).authors[0]).to eql(author2)
+  end
+
 end
